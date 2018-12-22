@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TBTools'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TBTools.'
+  s.summary          = 'A develop tool.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,19 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                      A development tool box that we use all the time
                        DESC
 
-  s.homepage         = 'https://github.com/mastercy919@hotmail.com/TBTools'
+  s.homepage         = 'https://github.com/Careyang/TBTools'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'mastercy919@hotmail.com' => 'mastercy919@hotmail.com' }
-  s.source           = { :git => 'https://github.com/mastercy919@hotmail.com/TBTools.git', :tag => s.version.to_s }
+  s.author           = { 'Careyang' => 'mastercy919@hotmail.com' }
+  s.source           = { :git => 'https://github.com/Careyang/TBTools.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TBTools/Classes/**/*'
+  s.source_files = 'TBTools/Classes/**/*' , 'TBTools/Classes/*'
   
   # s.resource_bundles = {
   #   'TBTools' => ['TBTools/Assets/*.png']
