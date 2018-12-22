@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'TBTools_Example' do
+  pod 'TBTools', :path => '../'
+
+  target 'TBTools_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
