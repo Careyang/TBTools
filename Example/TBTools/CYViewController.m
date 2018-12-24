@@ -7,6 +7,7 @@
 //
 
 #import "CYViewController.h"
+#import "TBTools-umbrella.h"
 
 @interface CYViewController ()
 
@@ -18,7 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
+    NSLog(@"%@\n%@\n%@\n%@\n%@\n%@\n%@\n%@\n",TBDeviceTool.DeviceType,
+                                              TBDeviceTool.DeviceModel,
+                                              TBDeviceTool.DeviceIDFA,
+                                              TBDeviceTool.DeviceIDFV,
+                                              TBDeviceTool.AppDisplayName,
+                                              TBDeviceTool.AppBuildVersion,
+                                              TBDeviceTool.AppBundleId,
+                                              TBDeviceTool.AppVersion);}
 
 - (void)didReceiveMemoryWarning
 {
