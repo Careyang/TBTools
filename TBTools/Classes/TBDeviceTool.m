@@ -13,8 +13,7 @@
 
 @implementation TBDeviceTool
 
-+(NSString *) DeviceModel
-{
++(NSString *) deviceModel{
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
@@ -26,8 +25,7 @@
  iPhone XR      828x1792   414x896
  iPhone XS Max  1242x2688  414x896
  */
-+(BOOL) isPhoneXModel
-{
++(BOOL) isPhoneXModel{
     UIScreen * mainScreen = UIScreen.mainScreen;
     CGFloat height = MAX(mainScreen.bounds.size.width, mainScreen.bounds.size.height);
     if (height == 812 || height == 896) {
@@ -36,72 +34,51 @@
     return NO;
 }
 // 这里可以灵活运用
-+ (NSString *) DeviceType
-{
++ (DeviceType) currentDeviceType{
+
     if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        return @"Device PAD";
+        return DeviceType_iPad;
     }else if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomTV){
-        return @"Device TV";
+        return DeviceType_TV;
     }else if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone){
-        return @"Device iPhone";
+        return DeviceType_iPhone;
     }else{
-        return @"Device Type Unknow";
+        return DeviceType_unknow;
     }
 }
 
-+ (BOOL) isPadModel
-{
-    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        return YES;
-    }
-    return NO;
-}
-
-+ (BOOL) isPhoneModel
-{
-    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-        return YES;
-    }
-    return NO;
-}
-
-+(CGSize) ScreenSize
-{
++(CGSize) screenSize{
     return UIScreen.mainScreen.bounds.size;
 }
-
 #pragma mark 常用参数
-+(BOOL) IDFAisEnable
-{
++(BOOL) iDFAisEnable{
     BOOL isEnable = ASIdentifierManager.sharedManager.isAdvertisingTrackingEnabled;
     return isEnable;
 }
-+(NSString *) DeviceIDFA{
++(NSString *) deviceIDFA{
     NSString * idfa = ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString;
     return TBStringnil(idfa);
 }
-+(NSString *) DeviceIDFV
-{
++(NSString *) deviceIDFV{
     NSString * idfv = UIDevice.currentDevice.identifierForVendor.UUIDString;
     return TBStringnil(idfv);
 }
-
-+(NSString *) AppVersion
-{
+/// APP 的 version
++(NSString *) appVersion{
     NSString * appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     return TBStringnil(appVersion);
 }
-+(NSString *) AppBuildVersion
-{
+/// APP 的 build version
++(NSString *) appBuildVersion{
     NSString * buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     return TBStringnil(buildVersion);
 }
-+(NSString *) AppBundleId
-{
+/// APP 的bundleid
++(NSString *) appBundleId{
     return TBStringnil([NSBundle mainBundle].bundleIdentifier);
 }
-+(NSString *) AppDisplayName
-{
+/// APP名称
++(NSString *) appDisplayName{
     NSString * appNmae = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
     return TBStringnil(appNmae);
 }

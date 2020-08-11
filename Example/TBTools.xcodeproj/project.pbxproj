@@ -324,21 +324,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TBTools_Example/Pods-TBTools_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TBTools_Example/Pods-TBTools_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TBTools/TBTools.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBTools.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TBTools_Example/Pods-TBTools_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TBTools_Example/Pods-TBTools_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0AA3002A9B04E66BE0B7D90 /* [CP] Check Pods Manifest.lock */ = {

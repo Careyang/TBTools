@@ -19,14 +19,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"%@\n%@\n%@\n%@\n%@\n%@\n%@\n%@\n",TBDeviceTool.DeviceType,
-                                              TBDeviceTool.DeviceModel,
-                                              TBDeviceTool.DeviceIDFA,
-                                              TBDeviceTool.DeviceIDFV,
-                                              TBDeviceTool.AppDisplayName,
-                                              TBDeviceTool.AppBuildVersion,
-                                              TBDeviceTool.AppBundleId,
-                                              TBDeviceTool.AppVersion);}
+    NSLog(@"%ld\n%@\n%@\n%@\n%@\n%@\n%@\n%@\n",TBDeviceTool.currentDeviceType,
+                                              TBDeviceTool.deviceModel,
+                                              TBDeviceTool.deviceIDFA,
+                                              TBDeviceTool.deviceIDFV,
+                                              TBDeviceTool.appDisplayName,
+                                              TBDeviceTool.appBuildVersion,
+                                              TBDeviceTool.appBundleId,
+                                              TBDeviceTool.appVersion);
+
+    [TBUITool setVersion:<#(NSInteger)#>]
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

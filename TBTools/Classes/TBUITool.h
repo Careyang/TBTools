@@ -12,17 +12,6 @@
 @interface TBUITool : NSObject
 
 #pragma mark ToolBox
-/** 方法里面的参数,默认合法,注意传参的正确 */
-
-/** 创建UILabel */
-+(UILabel *) createLabelWithFrame:(CGRect) frame andText:(NSString *) text andTextAlignment:(NSTextAlignment)textAlignment andFont:(UIFont *) font andTextColor:(UIColor *)textColor andNumOfLine:(NSInteger) numLine ;
-/** 创建UIButton */
-+(UIButton *) createButtonWithFrame:(CGRect) frame andTitle:(NSString *) text andTextFont:(UIFont *) font andTextColor:(UIColor *) color backGroundColor:(UIColor *) backgroundColor;
-+(UIButton *) createButtonWithFrame:(CGRect)frame andBackgroundImageName:(NSString *) bgImageName orImageName:(NSString *) imageName;
-/** 创建UIView */
-+(UIView *) createViewWithFrame:(CGRect) frame andBackGroundColor:(UIColor *) color;
-/** 创建UITextfield */
-+(UITextField *) createTextFieldWithFrame:(CGRect) frame andFont:(UIFont *) font andTextColor:(UIColor *)textColor andPlaceholder:(NSString *) holderText andClearButtonMode:(UITextFieldViewMode) mode ;
 
 /** 计算文本高度 */
 + (float)getLabelHeight:(NSString *)text andFont:(UIFont *)font andWidth:(float)width;

@@ -12,5 +12,6 @@
 #import "TBDeviceTool.h"
 #import "TBUITool.h"
 #import "TBValidTool.h"
+#import "TBUICreater.h"
 
 #endif /* TBHeader_h */

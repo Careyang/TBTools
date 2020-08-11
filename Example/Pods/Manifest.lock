@@ -1,0 +1,16 @@
+PODS:
+  - TBTools (1.1.0)
+
+DEPENDENCIES:
+  - TBTools (from `../`)
+
+EXTERNAL SOURCES:
+  TBTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TBTools: 5bf1198d4601438bb853c0918058a9bf9c8237bc
+
+PODFILE CHECKSUM: cb1041aca3274636855b693ab5a6de983ec3a21c
+
+COCOAPODS: 1.9.3
