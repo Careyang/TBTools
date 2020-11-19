@@ -20,18 +20,25 @@
     return TBStringnil(deviceString);
 }
 /*
- 机型            分辨率      逻辑分辨率
- iPhone X/XS    1125x2436  375x812
- iPhone XR      828x1792   414x896
- iPhone XS Max  1242x2688  414x896
+ 判断是否是刘海屏
  */
 +(BOOL) isPhoneXModel{
-    UIScreen * mainScreen = UIScreen.mainScreen;
-    CGFloat height = MAX(mainScreen.bounds.size.width, mainScreen.bounds.size.height);
-    if (height == 812 || height == 896) {
-        return YES;
+    if (@available(iOS 11 , *)) {
+        BOOL isXModel = [UIApplication.sharedApplication delegate].window.safeAreaInsets.bottom > 0;
+        return isXModel;;
     }
     return NO;
+}
+
+/// 返回状态栏的高度
++ (CGFloat)statusBarHeight {
+    CGFloat statusBarHeight = 0;
+    if (@available(iOS 13.0, *)) {
+        statusBarHeight = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
+    } else {
+        statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    return statusBarHeight;
 }
 // 这里可以灵活运用
 + (DeviceType) currentDeviceType{
@@ -51,18 +58,7 @@
     return UIScreen.mainScreen.bounds.size;
 }
 #pragma mark 常用参数
-+(BOOL) iDFAisEnable{
-    BOOL isEnable = ASIdentifierManager.sharedManager.isAdvertisingTrackingEnabled;
-    return isEnable;
-}
-+(NSString *) deviceIDFA{
-    NSString * idfa = ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString;
-    return TBStringnil(idfa);
-}
-+(NSString *) deviceIDFV{
-    NSString * idfv = UIDevice.currentDevice.identifierForVendor.UUIDString;
-    return TBStringnil(idfv);
-}
+
 /// APP 的 version
 +(NSString *) appVersion{
     NSString * appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];

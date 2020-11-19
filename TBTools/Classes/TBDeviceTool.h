@@ -40,14 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 获取常用数据
 
 /**
- iOS10 以后 判断用户是否限制了IDFA的追踪
-
- @return YES = 没有限制 返回正常， NO = 限制了，返回结果0000-0000-0000-0000
- */
-+(BOOL) iDFAisEnable;
-+(NSString *) deviceIDFA;
-+(NSString *) deviceIDFV;
-/**
  获取设备的类型
 
  @return   iPhone , iPad , TV
