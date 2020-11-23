@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(BOOL) isPhoneXModel;
 
+/// 获取状态栏的高度
++ (CGFloat)statusBarHeight;
 /**
  获取屏幕size
 
