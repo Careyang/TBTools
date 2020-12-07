@@ -32,24 +32,24 @@
  */
 
 // 直接设置图片
-CG_INLINE UIImage * TBImage (NSString * imageName){
+static inline UIImage * TBImage (NSString * imageName){
     return [UIImage imageNamed:imageName];
 }
 //判断字符串的长度是否大于0
-CG_INLINE BOOL TBStringLength (NSString * string){
+static inline BOOL TBStringLength (NSString * string){
     return ([string isKindOfClass:[NSString class]] && string.length > 0);
 }
 // 验证字符串合法，nil 转 @""
-CG_INLINE NSString * TBStringnil (NSString * string){
+static inline NSString * TBStringnil (NSString * string){
     return TBStringLength(string) ? string : @"";
 }
 
 /// 判断数组存在并且数组的count>0
-CG_INLINE BOOL TBArrayCountValid (NSArray *array) {
+static inline BOOL TBArrayCountValid (NSArray *array) {
     return (([array isKindOfClass:[NSArray class]] || [array isKindOfClass:[NSMutableArray class]]) && array.count > 0);
 }
 
-CG_INLINE NSString * TBIntToString(NSInteger value){
+static inline NSString * TBIntToString(NSInteger value){
     return [NSString stringWithFormat:@"%ld",value];
 }
 
